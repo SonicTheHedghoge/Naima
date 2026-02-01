@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovation Naima | Premium Furniture & Décor Tunisia</title>
+    <meta name="description" content="Innovation Naima propose une large gamme de meubles et objets de décoration alliant luxe, modernité et confort. Explorez nos collections aujourd’hui.">
+    
+    <!-- Tailwind CSS (CDN kept for simplicity in this setup, normally migrated to PostCSS in production) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Montserrat', 'sans-serif'],
+              serif: ['Cormorant Garamond', 'serif'],
+            },
+            colors: {
+              brand: {
+                dark: '#121212', 
+                gold: '#BF9B30', 
+                cream: '#F7F5F2', 
+                stone: '#E6E4E0',
+                charcoal: '#2C2C2C'
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'slow-spin': 'spin 12s linear infinite',
+              'marquee': 'marquee 25s linear infinite',
+              'fade-in-up': 'fadeInUp 1s ease-out forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        cursor: default;
+      }
+      
+      /* Smooth Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F7F5F2; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #BF9B30; 
+        border-radius: 0;
+      }
+      
+      /* Selection Color */
+      ::selection {
+        background: #BF9B30;
+        color: white;
+      }
+
+      /* Utility classes for reveal animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Text reveal mask */
+      .text-mask {
+        overflow: hidden;
+      }
+      .text-mask span {
+        display: block;
+        transform: translateY(100%);
+        transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .text-mask.active span {
+        transform: translateY(0);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-cream text-brand-dark antialiased overflow-x-hidden selection:bg-brand-gold selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
